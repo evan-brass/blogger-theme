@@ -1,0 +1,61 @@
+/**
+ * Add section numbers to headings.
+ */
+[itemprop="articleBody"] {
+	counter-reset: h hh hhh hhhh hhhhh hhhhhh;
+}
+
+/* Style the section counter */
+[itemprop="articleBody"] h1::before,
+[itemprop="articleBody"] h2::before,
+[itemprop="articleBody"] h3::before,
+[itemprop="articleBody"] h4::before,
+[itemprop="articleBody"] h5::before,
+[itemprop="articleBody"] h6::before {
+	/* Make the section numbers slightly lighter (or darker): */
+	opacity: 0.5;
+}
+
+/* Prefix the heading with the section number. */
+[itemprop="articleBody"] h1::before {
+	content: counter(h) " ";
+}
+[itemprop="articleBody"] h2::before {
+	content: counter(h) "." counter(hh) " ";
+}
+[itemprop="articleBody"] h3::before {
+	content: counter(h) "." counter(hh) "." counter(hhh) " ";
+}
+[itemprop="articleBody"] h4::before {
+	content: counter(h) "." counter(hh) "." counter(hhh) "." counter(hhhh) " ";
+}
+[itemprop="articleBody"] h5::before {
+	content: counter(h) "." counter(hh) "." counter(hhh) "." counter(hhhh) "." counter(hhhhh) " ";
+}
+[itemprop="articleBody"] h6::before {
+	content: counter(h) "." counter(hh) "." counter(hhh) "." counter(hhhh) "." counter(hhhhh) "." counter(hhhhhh) " ";
+}
+
+[itemprop="articleBody"] h1 {
+	counter-increment: h;
+	counter-reset: hh hhh hhhh hhhhh hhhhhh;
+}
+[itemprop="articleBody"] h2 {
+	counter-increment: hh;
+	counter-reset: hhh hhhh hhhhh hhhhhh;
+}
+[itemprop="articleBody"] h3 {
+	counter-increment: hhh;
+	counter-reset: hhhh hhhhh hhhhhh;
+}
+[itemprop="articleBody"] h4 {
+	counter-increment: hhhh;
+	counter-reset: hhhhh hhhhhh;
+}
+[itemprop="articleBody"] h5 {
+	counter-increment: hhhhh;
+	counter-reset: hhhhhh;
+}
+[itemprop="articleBody"] h6 {
+	counter-increment: hhhhhh;
+}

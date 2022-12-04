@@ -1,0 +1,41 @@
+/* Two columns for printing. */
+html {
+	line-height: 1.5;
+	/* column-count: 2; */
+	column-width: 3in;
+	column-rule: 1px solid currentColor;
+	column-fill: balance;
+	column-gap: 3em;
+	font-family: unset;
+
+	tab-size: 2ch; /* Try to squash code samples in print. */
+}
+header {
+	column-span: all;
+}
+
+/* Removing body padding because the print dialog will add page margins. */
+body {
+	padding: 0;
+	max-width: unset;
+}
+
+/* Remove color from links - they can't be clicked on paper - and show the href. */
+a {
+	color: currentColor !important;
+	text-decoration: unset;
+}
+div[itemprop="articleBody"] a[href]:not([href^="#"])::after {
+	content: " [" attr(href) "]";
+	word-break: break-all;
+}
+
+/* Hide everything except the main content */
+body > :not(main) {
+	display: none;
+}
+
+/* Hide the Table Of Contents */
+.toc {
+	/* display: none; */
+}

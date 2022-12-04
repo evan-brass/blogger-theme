@@ -1,0 +1,184 @@
+@import url("/css/outline.css");
+html {
+	margin: 0;
+
+	/* Global Formatting */
+	tab-size: 4;
+	line-height: 2;
+	font-family: sans-serif;
+	font-size: 16px;
+	orphans: 2;
+	widows: 2;
+	overflow-wrap: break-word;
+}
+pre {
+	background-color: inherit;
+	white-space: pre-wrap;
+	line-height: normal;
+	font-size: normal;
+	padding: 0.5em;
+	overflow-wrap: break-word;
+}
+body {
+	margin: 0 auto;
+	padding: 1em 2em;
+	max-width: 80ch;
+}
+ul[itemprop="keywords"] {
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+ul[itemprop="keywords"] li:not(:first-of-type)::before {
+	content: ", ";
+}
+ul[itemprop="keywords"] li {
+	display: inline;
+}
+span[itemprop="author"] {
+	display: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0;
+	font-family: serif;
+	break-inside: avoid;
+	break-after: avoid;
+}
+:is(h1, h2, h3, h4, h5, h6) + :is(p, ol, ul, pre), :is(p, ol, ul, pre):first-child {
+	margin-top: 0;
+}
+p {
+	text-indent: 3ch;
+}
+body > header {
+	border: 1px solid currentColor;
+	border-width: 0 1px;
+	padding: 1em 2em;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+[itemprop="articleBody"] > *:first-child {
+	margin-top: 0;
+}
+main {
+	position: relative;
+}
+[contenteditable] {
+	border: 1px dashed salmon;
+	margin: -1px;
+}
+main > ol {
+	padding: unset;
+}
+main > ol li {
+	list-style: none;
+}
+main > ol p, main > ol h2 {
+	margin: 0;
+}
+header h1, header h2 {
+	margin: 0;
+}
+img {
+	max-width: 100vmin;
+	max-height: 100vmin;
+	display: block;
+	margin: 0 auto;
+}
+p img {
+	display: unset;
+	margin: unset;
+}
+ul, ol {
+	margin: 0;
+	padding: 0 0 0 3ch;
+}
+
+@media (max-width: 80ch) {
+	html {
+		tab-size: 2ch;
+	}
+	p {
+		text-indent: 2ch;;
+	}
+}
+/* Primary Stylesheet Styles: */
+:focus-visible {
+	outline-offset: 0.5em;
+}
+code, pre {
+	background-color: var(--background-accent);
+}
+
+aside {
+	box-sizing: border-box;
+	position: absolute;
+	width: calc((100vw - 100%) / 2);
+	max-width: 40ch;
+	padding: 0 1em;
+	left: 100%;
+}
+/* Alternate which side the aside is on. */
+aside:nth-of-type(2n+1) {
+	left: unset;
+	right: 100%;
+}
+@media print, (max-width: 160ch) {
+	aside {
+		position: unset;
+		max-width: unset;
+		width: unset;
+	}
+}
+
+a {
+	color: #5d72d8;
+}
+html {
+	color: #000;
+	background-color: #fff;
+	--background-accent: #eee;
+}
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: #111;
+		color: #ccc;
+		--background-accent: #222;
+	}
+	img.invert-dark {
+		filter: invert() hue-rotate(180deg);
+	}
+}
+time {
+	font-variant: small-caps;
+}
+
+/* Editing */
+:focus-within ::part(edit-bar) {
+	visibility: visible;
+}
+:focus-visible[contentEditable] {
+	outline: 0;
+}
+
+code {
+	padding: 0.3em;
+	font-size: 14px;
+}
+
+pre code {
+	padding: unset;
+	background-color: unset;
+}
+
+/* .toc {
+	border-top: 1px solid currentColor;
+	border-bottom: 1px solid currentColor;
+	padding: 1em;
+	margin: 0;
+} */
+/* .toc:first-child {
+	font-family: serif;
+	font-variant: small-caps;
+} */
