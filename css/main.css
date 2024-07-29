@@ -1,4 +1,6 @@
-@import url("/css/outline.css");
+@import url(print.css) print;
+@import url(outline.css);
+
 html {
 	margin: 0;
 
@@ -171,14 +173,3 @@ pre code {
 	padding: unset;
 	background-color: unset;
 }
-
-/* .toc {
-	border-top: 1px solid currentColor;
-	border-bottom: 1px solid currentColor;
-	padding: 1em;
-	margin: 0;
-} */
-/* .toc:first-child {
-	font-family: serif;
-	font-variant: small-caps;
-} */
